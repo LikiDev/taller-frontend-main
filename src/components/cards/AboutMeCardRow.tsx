@@ -6,6 +6,7 @@ import { MediumText } from '../../styles/TextStyles';
 interface AboutMeCardRowProps {
   title: string;
   value: string | number;
+  isLink?: boolean;
 }
 
 const AboutMeCardRow = (props: AboutMeCardRowProps) => {
@@ -22,7 +23,14 @@ const AboutMeCardRow = (props: AboutMeCardRowProps) => {
     <InfoDetailBox>
       <InfoKey>{props.title}</InfoKey>
       <InfoValueWrapper>
-        <InfoValue>{formatDate(props.value)}</InfoValue>
+        {
+          props.isLink ? 
+            <a href={props.value.toString()} target="_blank" rel="noopener noreferrer">
+              <InfoValue>{formatDate(props.value)}</InfoValue>
+            </a>
+          : 
+            <InfoValue>{formatDate(props.value)}</InfoValue>
+        }
       </InfoValueWrapper>
     </InfoDetailBox>
   );

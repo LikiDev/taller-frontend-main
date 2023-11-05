@@ -4,7 +4,7 @@ import { Project } from '../model/project';
 export const mockLogin = (userName: string, password: string) =>
   new Promise<TokenResponse>(function (resolve, rejected) {
     setTimeout(() => {
-      if (userName === 'user@threepoints.com' && password === 'patata') {
+      if (userName === 'user@admin.com' && password === 'tomate') {
         resolve(
           JSON.parse(
             `{"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODg0YmJiM2Q0YTRkNDk1ZDYyNGJhYyIsImVtYWlsIjoibHVjYXNmZXJuYW5kZXphcmFnb25AZ21haWwuY29tIiwiaWF0IjoxNjM2MzIyMzA3LCJleHAiOjE2MzYzMjU5MDd9.yxy7uKWXJx5rY8znRBTg5182llyH8Rs9R8C6_SM4LIg" }`
@@ -43,11 +43,11 @@ export const mockAboutme = () =>
         JSON.parse(
           `{
             "id":"12389asdfasf8",
-            "name":"Lucas Fernández Aragón",
-            "birthday":765817712000,
+            "name":"Jordi Nadal Cantó",
+            "birthday":208457700000,
             "nationality":"Spain",
-            "job":"Red Hat",
-            "github":"https://github.com/lucferbux"
+            "job":"CTO Optima",
+            "github":"https://github.com/LikiDev/"
             }`
         )
       );
@@ -62,21 +62,12 @@ export const mockProjects = () =>
           `[
                 {
                 "id":"12349as8df90",
-                "title":"React",
-                "description":"React es el Framework web basado en componentes de Facebook. Cuenta con una curva de aprendizaje corta y mucha flexibilidad",
-                "version":"17.0.1",
-                "link":"https://reactjs.org/docs/hello-world.html",
-                "tag":"JavaScript, Typescript, React",
+                "title":"COBOL",
+                "description":"Casi todos los sistemas que requieren gran capacidad de procesamiento por lotes en grandes empresas con sistemas mainframes utilizan COBOL.",
+                "version":"7.1",
+                "link":"https://www.ibm.com/docs/es/i/7.1?topic=languages-cobol",
+                "tag":"Cobol, IBM, AS400",
                 "timestamp":"765817712000"
-                },
-                {
-                "id":"789asdfas89",
-                "title":"Vite",
-                "description":"Toolchain para la creación de proyectos basados en React, contiene lo báisco para crear proyectos basados en single-page apps",
-                "version":"4.0.3",
-                "link":"https://vitejs.dev",
-                "tag":"Toolchain, React, Bootstraping",
-                "timestamp":"765817712001"
                 },
                 {
                 "id":"56765asdfasdf8",
@@ -137,3 +128,10 @@ export const mockProjects = () =>
       );
     }, 500);
   });
+
+  export function printProjectData() {
+    mockProjects().then((projects) => {
+      // Imprime los datos de los proyectos en la consola
+      console.log(projects);
+    });
+  }

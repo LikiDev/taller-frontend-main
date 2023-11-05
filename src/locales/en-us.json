@@ -1,13 +1,13 @@
 {
     "meta": {
-        "title": "Portfolio",
-        "description": "Personal Portfolio Webpage"
+        "title": "Title changed",
+        "description": "Description also changed"
     },
     "app": {
         "title": "Welcome to my Portfolio Webpage"
     },
     "landing": {
-        "title": "Welcome to my Portfolio"
+        "title": "Title changed"
     },
     "loader" : {
         "text": "loading..."
